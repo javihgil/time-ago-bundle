@@ -2,6 +2,8 @@
 
 namespace Softspring\TimeAgoBundle\Helper;
 
+use DateTime;
+use Exception;
 use Psr\Log\LoggerInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -18,15 +20,15 @@ class TimeAgoHelper
     }
 
     /**
-     * @param \DateTime|string|mixed $dateTime
+     * @param DateTime|string|mixed $dateTime
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function ago($dateTime): string
     {
-        if (!$dateTime instanceof \DateTime) {
+        if (!$dateTime instanceof DateTime) {
             if (is_string($dateTime)) {
-                $dateTime = new \DateTime($dateTime);
+                $dateTime = new DateTime($dateTime);
             } else {
                 $this->logger && $this->logger->warning(sprintf('Timeago extension must receive a DateTime object or string, %s received', gettype($dateTime)));
 
@@ -34,7 +36,7 @@ class TimeAgoHelper
             }
         }
 
-        $diff = $dateTime->diff(new \DateTime('now'));
+        $diff = $dateTime->diff(new DateTime('now'));
 
         if ($diff->y) {
             return $this->translator->trans('timeago.years', ['%count%' => $diff->y], 'sfs_timeago');
