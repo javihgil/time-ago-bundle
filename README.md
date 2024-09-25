@@ -1,14 +1,17 @@
+# Time ago bundle
+
+![Latest Stable](https://img.shields.io/packagist/v/softspring/time-ago-bundle?label=stable&style=flat-square)
+![Latest Unstable](https://img.shields.io/packagist/v/softspring/time-ago-bundle?label=unstable&style=flat-square&include_prereleases)
+![License](https://img.shields.io/packagist/l/softspring/time-ago-bundle?style=flat-square)
+![PHP Version](https://img.shields.io/packagist/dependency-v/softspring/time-ago-bundle/php?style=flat-square)
+![Downloads](https://img.shields.io/packagist/dt/softspring/time-ago-bundle?style=flat-square)
+[![CI](https://img.shields.io/github/actions/workflow/status/softspring/time-ago-bundle/php.yml?branch=5.3&style=flat-square&label=CI)](https://github.com/softspring/time-ago-bundle/actions/workflows/php.yml)
+
 This bundle provides a simple twig extension to human readable date diff based on translations.
 
-[![Latest Stable Version](https://poser.pugx.org/softspring/time-ago-bundle/v/stable.svg)](https://packagist.org/packages/softspring/time-ago-bundle)
-[![Latest Unstable Version](https://poser.pugx.org/softspring/time-ago-bundle/v/unstable.svg)](https://packagist.org/packages/softspring/time-ago-bundle)
-[![License](https://poser.pugx.org/softspring/time-ago-bundle/license.svg)](https://packagist.org/packages/softspring/time-ago-bundle)
-[![Total Downloads](https://poser.pugx.org/softspring/time-ago-bundle/downloads)](https://packagist.org/packages/softspring/time-ago-bundle)
-[![Build status](https://github.com/softspring/time-ago-bundle/actions/workflows/php.yml/badge.svg?branch=5.3)](https://github.com/softspring/time-ago-bundle/actions/workflows/php.yml)
+## Installation
 
-# Installation
-
-## Applications that use Symfony Flex
+### Applications that use Symfony Flex
 
 Open a command console, enter your project directory and execute:
 
@@ -16,9 +19,9 @@ Open a command console, enter your project directory and execute:
 $ composer require softspring/time-ago-bundle
 ```
 
-## Applications that don't use Symfony Flex
+### Applications that don't use Symfony Flex
 
-### Step 1: Download the Bundle
+#### Step 1: Download the Bundle
 
 Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
@@ -31,7 +34,7 @@ This command requires you to have Composer installed globally, as explained
 in the [installation chapter](https://getcomposer.org/doc/00-intro.md)
 of the Composer documentation.
 
-### Step 2: Enable the Bundle
+#### Step 2: Enable the Bundle
 
 Then, enable the bundle by adding it to the list of registered bundles
 in the `app/AppKernel.php` file of your project:
@@ -57,7 +60,7 @@ class AppKernel extends Kernel
 }
 ```
 
-## Usage
+### Usage
 
 ```twig
 {{ object.createdAt|time_ago }} {# for example, renders: 5 minutes ago #}
